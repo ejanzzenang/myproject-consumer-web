@@ -160,8 +160,6 @@ Walk through the instructions:
 $ vue init webpack myproject-vuejs-web
 ```
 ```
-$ vue init webpack myproject-vuejs-web
-
 ? Project name myproject-vuejs-web
 ? Project description A Vue.js project
 ? Author Eddrich Janzzen Ang <eddrichang@gmail.com>
