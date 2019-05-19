@@ -3,6 +3,15 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import 'bootstrap'
+import './assets/app.scss'
+
+
+// Assign `$` to the jQuery variable in the window element
+import jQuery from 'jquery'
+window.$ = window.jQuery = jQuery
+
+import 'popper.js'
 
 Vue.config.productionTip = false
 
