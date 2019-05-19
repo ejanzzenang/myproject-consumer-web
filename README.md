@@ -1,6 +1,6 @@
 
 
-# Set up Vue.js Frontend Using AWS S3
+# Set up Vue.js Frontend 
 ## Prerequsites
 
 - AWS Account
@@ -40,7 +40,7 @@ The  Project Layout will look like this:
 
 ```
 
-## Step 1:
+## Step 1 Initialize a Basic Vue Application:
 
 ### Step 1.1: Create a CodeCommit Repository
 ```
@@ -227,6 +227,7 @@ http://localhost:8080
 ```
 You should see the ff:
 ![](vue.png)
+
 
 
 ### (Optional) Clean up
