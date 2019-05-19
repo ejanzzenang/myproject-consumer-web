@@ -3,12 +3,6 @@
 # Set up Vue.js Frontend 
 ## Prerequsites
 
-- AWS Account
-- IAM User with Administrator Access and Access Keys
-- AWS CLI
-```
-$ aws --version
-aws-cli/1.16.8 Python/2.7.10 Darwin/16.7.0 botocore/1.11.8
 ```
 - Git
 ```
@@ -27,12 +21,6 @@ $ $ npm install -global vue-cli eslint
 $ vue --version 
 2.9.6
 ```
-- Docker
-```
-$ docker -v
-Docker version 18.09.2, build 6247962
-```
-
 
 The  Project Layout will look like this:
 
