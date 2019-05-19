@@ -1,9 +1,7 @@
-
-
 # Set up Vue.js Frontend 
 ## Prerequsites
 
-```
+
 - Git
 ```
 $ git --version
