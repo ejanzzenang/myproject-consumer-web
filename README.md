@@ -40,7 +40,12 @@ $ git clone https://git-codecommit.us-east-1.amazonaws.com/v1/repos/myproject-vu
 ```
 
 
-### Step 1.3: Set up .gitignore
+### Step 1.3: Navigate to working directory
+```
+$ cd ~/environment/myproject-vuejs-web
+```
+
+### Step 1.4: Set up .gitignore
 ```
 $ cd ~/environment/myproject-vuejs-web
 $ vi .gitignore
@@ -138,7 +143,7 @@ typings/
 .dynamodb/
 ```
 
-### Step 1.4: Test access to repo by adding README.md file and push to remote repository
+### Step 1.5: Test access to repo by adding README.md file and push to remote repository
 
 ```
 $ cd ~/environment/myproject-vuejs-web
@@ -146,11 +151,6 @@ $ echo "myproject-vuejs-web" >> README.md
 $ git add .
 $ git commit -m "Adding README.md"
 $ git push origin master
-```
-
-### Step 1.5: Navigate to working directory
-```
-$ cd ~/environment/myproject-vuejs-web
 ```
 
 ### Step 1.6:  Initialize Vue.js application
