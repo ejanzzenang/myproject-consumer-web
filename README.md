@@ -266,7 +266,7 @@ In `myproject-vuejs-web/assets/`
 create file: `app.scss`
 
 ```scss
-@import	'~/bootstrap/scss/bootstrap'
+@import '~/bootstrap/scss/bootstrap'
 ```
 
 We need to require `app.scss` in  `main.js` for it to be able to render the bootstrap css files. 
@@ -434,7 +434,17 @@ let router = new Router({
 export default router
 ```
 
-### Step 3.2:  Setup a Basic Home Page
+### Step 3.2: Test home page
+
+In your browser, go to:  
+```
+http://localhost:8080
+```
+You should see the ff:
+![](home.png)
+
+
+### Step 3.3:  Setup a Basic Home Page
 In `myproject-vuejs-web/src/components`
 add file: `home.vue`
 
@@ -449,13 +459,13 @@ add file: `home.vue`
 </template>
 ```
 
-### Step 3.2:  Setup Index Page
+### Step 3.4:  Setup Index Page
 TODO
 ```html
 
 ```
 
-### Step 3.3:  Setup Index Page
+### Step 3.5:  Setup Index Page
 TODO
 ```html
 `
