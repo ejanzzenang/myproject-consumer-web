@@ -37,7 +37,7 @@ $ aws codecommit create-repository --repository-name myproject-vuejs-web
 ### Step 1.2: Clone the repository
 ```bash
 $ cd ~/environment
-$ git clone https://git-codecommit.us-east-1.amazonaws.com/v1/repos/myproject-vuejs-web
+$ git clone https://git-codecommit.ap-southeast-1.amazonaws.com/v1/repos/myproject-vuejs-web
 ```
 
 
