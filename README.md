@@ -1,4 +1,5 @@
 
+
 # Set up Vue.js Frontend 
 ## Prerequsites
 
@@ -291,7 +292,7 @@ import './assets/app.scss'
 ### Step 2.3: Require require jQuery and popper.js
 
 In `myproject-vuejs-web/src/main.js`
-Add the following line 
+Add the following line:
 ```js
 import Vue from 'vue'
 import App from './App'
@@ -458,18 +459,41 @@ You should see the ff:
 ![](home.png)
 
 
-### Step 3.4:  Setup Index Page
-TODO
-```html
+## Step 4: Set up Axios to Consume Data
 
+### Step 4.1: Install Axios
+In the terminal run, inside your project folder, the following command: 
+```bash
+$ npm install axios --save
 ```
 
-### Step 3.5:  Setup Index Page
-TODO
-```html
-`
+in `myproject-vuejs-web/package.json` you must see the following dependencies:
+```json
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.15.0",
+    "axios": "^0.18.0",
+     .....
+  },
 ```
 
+### Step 4.2: Modify Home Page to Include Axios
+
+In `myproject-vuejs-web/src/App.vue` remove the following line:
+
+App.vue
+```html
+<img src="./assets/logo.png">
+```
+
+In `myproject-vuejs-web/src/main.js`
+Add the following lines:
+
+```js
+import axios from 'axios'
+Vue.prototype.$http = axios;
+```
 
 ### (Optional) Clean up
 ```

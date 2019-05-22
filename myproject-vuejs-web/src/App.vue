@@ -36,7 +36,6 @@
       </div>
     </nav>
     <div class="container">
-      <img src="./assets/logo.png">
       <router-view/>      
     </div>
 
