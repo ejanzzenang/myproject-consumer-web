@@ -473,8 +473,7 @@ in `myproject-vuejs-web/package.json` you must see the following dependencies:
     "bootstrap": "^4.3.1",
     "jquery": "^3.4.1",
     "popper.js": "^1.15.0",
-    "axios": "^0.18.0",
-     .....
+    "axios": "^0.18.0"
   },
 ```
 
