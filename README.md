@@ -17,39 +17,33 @@ $ npm -v
 
 - vue-cli
 ```
-$ $ npm install -global vue-cli eslint
+$ npm install -g @vue/cli
 $ vue --version 
-2.9.6
-```
-
-The  Project Layout will look like this:
-
-```
-
+3.7.0
 ```
 
 ## Step 1 Initialize a Basic Vue Application:
 
 ### Step 1.1: Create a CodeCommit Repository
 ```bash
-$ aws codecommit create-repository --repository-name myproject-vuejs-web
+$ aws codecommit create-repository --repository-name myproject-consumer-web
 ```
 
 ### Step 1.2: Clone the repository
 ```bash
 $ cd ~/environment
-$ git clone https://git-codecommit.ap-southeast-1.amazonaws.com/v1/repos/myproject-vuejs-web
+$ git clone https://git-codecommit.ap-southeast-1.amazonaws.com/v1/repos/myproject-consumer-web
 ```
 
 
 ### Step 1.3: Navigate to working directory
 ```
-$ cd ~/environment/myproject-vuejs-web
+$ cd ~/environment/myproject-consumer-web
 ```
 
 ### Step 1.4: Set up .gitignore
 ```
-$ cd ~/environment/myproject-vuejs-web
+$ cd ~/environment/myproject-consumer-web
 $ vi .gitignore
 ```
 ```
@@ -148,8 +142,8 @@ typings/
 ### Step 1.5: Test access to repo by adding README.md file and push to remote repository
 
 ```bash
-$ cd ~/environment/myproject-vuejs-web
-$ echo "myproject-vuejs-web" >> README.md
+$ cd ~/environment/myproject-consumer-web
+$ echo "myproject-consumer-web" >> README.md
 $ git add .
 $ git commit -m "Adding README.md"
 $ git push origin master
@@ -158,60 +152,63 @@ $ git push origin master
 ### Step 1.6:  Initialize Vue.js application
 Walk through the instructions:
 ```bash
-$ vue init webpack myproject-vuejs-web
+$ vue create myproject
 ```
-```
-? Project name myproject-vuejs-web
-? Project description A Vue.js project
-? Author Eddrich Janzzen Ang <eddrichang@gmail.com>
-? Vue build standalone
-? Install vue-router? Yes
-? Use ESLint to lint your code? No
-? Set up unit tests No
-? Setup e2e tests with Nightwatch? No
-? Should we run `npm install` for you after the project has been created? (recommended) npm
-
-   vue-cli · Generated "myproject-vuejs-web".
+```bash
+Vue CLI v3.7.0
+? Please pick a preset: default (babel, eslint)
 
 
-# Installing project dependencies ...
-# ========================
-
-.....
-shortend this part
-.....
+Vue CLI v3.7.0
+✨  Creating project in /home/eddrichjanzzenang/Desktop/myproject-consumer-web/myproject.
+⚙  Installing CLI plugins. This might take a while...
 
 
-# Project initialization finished!
-# ========================
+> yorkie@2.0.0 install /home/eddrichjanzzenang/Desktop/myproject-consumer-web/myproject/node_modules/yorkie
+> node bin/install.js
 
-To get started:
+setting up Git hooks
+can't find .git directory, skipping Git hooks installation
 
-  cd myproject-vuejs-web
-  npm run dev
+> core-js@2.6.8 postinstall /home/eddrichjanzzenang/Desktop/myproject-consumer-web/myproject/node_modules/core-js
+> node -e "try { require('./scripts/postinstall'); } catch (e) { /* empty */ }"
 
-Documentation can be found at https://vuejs-templates.github.io/webpack
+added 1155 packages from 914 contributors and audited 23635 packages in 20.518s
+found 0 vulnerabilities
+
+🚀  Invoking generators...
+📦  Installing additional dependencies...
+
+added 36 packages from 27 contributors, updated 2 packages, moved 9 packages and audited 23924 packages in 6.289s
+found 0 vulnerabilities
+
+⚓  Running completion hooks...
+
+📄  Generating README.md...
+
+🎉  Successfully created project myproject.
+👉  Get started with the following commands:
+
+ $ cd myproject
+ $ npm run serve
 ```
 
 ### Step 1.7:  Test Vue Application Locally
 ```
-$ cd myproject-vuejs-web
-$ npm run dev
+$ cd myproject
+$ npm run serve
 ```
-```
-> myproject-vuejs-web@1.0.0 dev /Users/eddrichjanzzenang/Desktop/myproject-vuejs-web/myproject-vuejs-web
-> webpack-dev-server --inline --progress --config build/webpack.dev.conf.js
+```bash
+ DONE  Compiled successfully in 1927ms                           11:54:06
 
- 13% building modules 29/31 modules 2 active ...s-web/myproject-vuejs-web/src/App.vue{ parser: "babylon" } is deprecated; we now treat it as { parser: "babel" }.
- 95% emitting
+ 
+  App running at:
+  - Local:   http://localhost:8080/ 
+  - Network: http://192.168.8.128:8080/
 
- DONE  Compiled successfully in 5803ms                                                                                                                                   5:06:47 PM
+  Note that the development build is not optimized.
+  To create a production build, run npm run build.
 
- I  Your application is running here: http://localhost:8080
-```
-In your browser, go to:  
-```
-http://localhost:8080
 ```
 You should see the ff:
 ![](vue.png)
@@ -227,15 +224,14 @@ Install dependencies:
 In `myproject-vuejs-web` run the ff:
 ```bash
 $ npm install bootstrap jquery popper.js webpack-cli --save 
-$ npm install sass-loader node-sass webpack --save-dev
 ```
 
 in `myproject-vuejs-web/package.json` you must see the ff dependencies:
 ```json
   "dependencies": {
-    "bootstrap": "^4.3.1",
+  "bootstrap": "^4.3.1",
     "jquery": "^3.4.1",
-    "popper.js": "^1.15.0"
+    "popper.js": "^1.15.0",  
   },
 ```
 
@@ -251,8 +247,9 @@ import App from './App'
 import router from './router'
 
 -------------------------------------------------------------
-//Add this below
-import 'bootstrap'
+//Add lines here
+import 'bootstrap'; 
+import 'bootstrap/dist/css/bootstrap.min.css';
 -------------------------------------------------------------
 
 ....
@@ -338,11 +335,46 @@ new Vue({
 })
 ```
 
-
-
 ## Step 3: Setup Basic U/I
 
-### Step 3.1 Add a basic Bootstrap Navbar
+### Step 3.1: Add a router plugin
+```bash
+$ vue add router
+```
+Output:
+
+```bash
+? Use history mode for router? (Requires proper server setup for index fa
+llback in production) Yes
+
+🚀  Invoking generator for core:router...
+📦  Installing additional dependencies...
+
+added 1 package from 1 contributor and audited 24981 packages in 6.458s
+found 0 vulnerabilities
+
+✔  Successfully invoked generator for plugin: core:router
+   The following files have been updated / added:
+
+     .gitignore
+     README.md
+     babel.config.js
+     package-lock.json
+     package.json
+     public/favicon.ico
+     public/index.html
+     src/App.vue
+     src/assets/logo.png
+     src/components/HelloWorld.vue
+     src/main.js
+     src/router.js
+     src/views/About.vue
+     src/views/Home.vue
+
+   You should review these changes with git diff and commit them.
+
+```
+### Step 3.2 Add a basic Bootstrap Navbar
 In `myproject-vuejs-web/src/`
 replace code in  `App.vue` with the following snippet:
 
@@ -360,10 +392,10 @@ Adding this code snippet will allow the navbar to be displayed in multiple views
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+           <a class="nav-link"><router-link to="/">Home</router-link></a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+          <li class="nav-item active">
+            <a class="nav-link"><router-link to="/about">About</router-link></a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -386,68 +418,17 @@ Adding this code snippet will allow the navbar to be displayed in multiple views
         </form>
       </div>
     </nav>
-    <div class="container">
-      <img src="./assets/logo.png">
-      <router-view/>      
-    </div>
-
+    <router-view/>
   </div>
 </template>
-
-<script>
-export default {
-  name: 'App'
-}
-</script>
 
 <style>
 #app {
   text-align: center;
-
 }
 </style>
 
 ```
-
-### Step 3.1: Modify Router
-In `myproject-vuejs-web/src/router`
-replace code in  `index.js` with the following snippet:
-
-```js
-import Vue from 'vue'
-import Router from 'vue-router'
-import Home from '@/components/home'
-
-Vue.use(Router)
-
-let router = new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'Home',
-      component: Home
-    }
-  ]
-})
-
-export default router
-```
-
-### Step 3.2:  Setup a Basic Home Page
-In `myproject-vuejs-web/src/components`
-add file: `home.vue`
-
-```html
-<template>
-  <div>
-    <h1>Home</h1>
-    <div>
-      <router-link to="/#"></router-link>
-    </div>
-  </div>
-</template>
-```
-
 
 ### Step 3.3: Test home page
 
